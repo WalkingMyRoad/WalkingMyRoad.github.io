@@ -1,0 +1,21 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>Detect Mobile OS</title>  
+</head>  
+<body>  
+  <script type="text/javascript">  
+    var u = navigator.userAgent;  
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; // 检测是否为Android终端  
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // 检测是否为iOS终端  
+  
+    if (isiOS) {  
+      alert("这是iOS系统");  
+      // 在这里可以添加针对iOS系统的处理逻辑  
+    } else {  
+      alert("这是Android系统");  
+      // 在这里可以添加针对Android系统的处理逻辑  
+    }  
+  </script>  
+</body>  
+</html>

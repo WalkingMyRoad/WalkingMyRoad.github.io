@@ -1,0 +1,2 @@
+# linkOne
+将googleplay与appstore的链接进行合并的html程序

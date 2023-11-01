@@ -6,7 +6,7 @@
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;  
       var isAndroid = userAgent.indexOf(' Android ') > -1;  
       var isiOS = userAgent.match(/(iPhone|iPad|iPod touch); CPU.*OS (\d+)/);  
-  
+      alert(userAgent);
       if (isAndroid) {  
         window.location.href = 'https://play.google.com/store/apps/details?id=com.yuwell.oversea'; // Android 设备的重定向链接  
       } else if (isiOS) {  

@@ -4,17 +4,27 @@
   <script>  
     function redirectToDeviceSpecificLink() {  
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;  
-      var isAndroid = userAgent.indexOf(' Android ') > -1;  
-      var isiOS = userAgent.match(/(iPhone|iPad|iPod touch); CPU.*OS (\d+)/);  
-      alert(userAgent);
-      if (isAndroid) {  
-        window.location.href = 'https://play.google.com/store/apps/details?id=com.yuwell.oversea'; // Android 设备的重定向链接  
-      } else if (isiOS) {  
-        window.location.href = 'https://apps.apple.com/cn/app/anytime-bt/id6467751539'; // iOS 设备的重定向链接  
-      } else {  
-        // 其他设备的重定向链接，例如桌面设备或其他移动操作系统  
-        window.location.href = 'https://apps.apple.com/cn/app/anytime-bt/id6467751539';  
-      }  
+      // var isAndroid = userAgent.indexOf(' Android ') > -1;  
+      // var isiOS = userAgent.match(/(iPhone|iPad|iPod touch); CPU.*OS (\d+)/);
+      // 判断Android设备
+      if (/Android/.test(userAgent)) {
+        alert("这是 Android 设备");
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.yuwell.oversea';
+      }
+      // 判断是否为iOS
+      else if (/iPhone|iPad|iPod/.test(userAgent)) {
+        alert("这是 iOS 设备");
+        window.location.href = 'https://apps.apple.com/cn/app/anytime-bt/id6467751539';
+      }
+      // 判断是否为Mac
+      else if (/Mac OS/.test(userAgent)) {
+        alert("这是 Mac");
+        window.location.href = 'https://apps.apple.com/cn/app/anytime-bt/id6467751539';
+      }
+      else {
+        alert("无法判断设备 " + userAgent);
+        window.location.href = 'https://apps.apple.com/cn/app/anytime-bt/id6467751539';
+      }
     }  
   </script>  
 </head>  

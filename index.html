@@ -21,6 +21,10 @@
         alert("这是 Mac");
         window.location.href = 'https://apps.apple.com/cn/app/anytime-bt/id6467751539';
       }
+      else if (/Windows|windows/.test(userAgent)) {
+        alert("这是 Windows");
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.yuwell.oversea';
+      }
       else {
         alert("无法判断设备 " + userAgent);
         window.location.href = 'https://apps.apple.com/cn/app/anytime-bt/id6467751539';
